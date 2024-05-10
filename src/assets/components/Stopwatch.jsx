@@ -7,6 +7,7 @@ const Stopwatch = () => {
 
   useEffect(() => {
     let timeId;
+
     if (active) {
       timeId = setInterval(() => {
         setSecond((prevSecond) => {
@@ -37,7 +38,8 @@ const Stopwatch = () => {
       >
         <h1>Stopwatch</h1>
         <h3>
-          Time : {minute}:{second}
+          Time : {minute}:{" "}
+          {second.toString().length === 1 ? `0${second}` : second}
         </h3>
         <div
           style={{
@@ -54,7 +56,7 @@ const Stopwatch = () => {
             onClick={() => {
               setSecond(0);
               setMinute(0);
-              setActive(!active);
+              setActive(false);
             }}
           >
             Reset

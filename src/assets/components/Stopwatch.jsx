@@ -38,7 +38,7 @@ const Stopwatch = () => {
       >
         <h1>Stopwatch</h1>
         <h3>
-          Time : {minute}:{" "}
+          Time : {minute}:
           {second.toString().length === 1 ? `0${second}` : second}
         </h3>
         <div
